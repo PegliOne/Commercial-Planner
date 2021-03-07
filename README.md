@@ -1,24 +1,43 @@
-# README
+# Economy-Planner-Plan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Production Updates
 
-Things you may want to cover:
+### 08/03/21 10:30am
 
-* Ruby version
+Step One Complete: Rails project and GitHub repository created. Database set up and seeded. Orders and products appear on the website correctly. Routes, controllers and views set up for users, orders, products, departments and shifts. The next step is to add basic functionality for non-admin users (user login, order CRUD system, product search and/or selection forms).
 
-* System dependencies
+## Production Plan
 
-* Configuration
+### Step One
+* Create the Rails project and add it to GitHub
+* Create database and seed database, using the database design diagram
+* Create the users, orders, products, shifts and departments controllers
+* Create an index for the products to check database
+* Push to GitHub and update README
 
-* Database creation
+### Step Two
+* Create a home page with a menu
+* Create user login, show and edit functionality
+* Create an order CRUD system
+* Create product search and/or selection forms
+* Push to GitHub and update README
 
-* Database initialization
+### Step Three
+* Create a shift CRUD system
+* Enable user and admin permissions
+* Add basic styling
+* Deploy to Heroku
+* Push to GitHub and update README
 
-* How to run the test suite
+### Step Four - Bonus Functionality
+* Calculate and display labour hours required for each department
+* Add the ability to check if enough labour hours have been assigned
+* Add user, product and department CRUD systems
+* Add product images (stretch goal)
+* Push to GitHub / Heroku and update README
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Step Five
+* Improve styling
+* Test if everything works and fix any problems
+* Review and simplify code
+* Push to GitHub / Heroku and update README

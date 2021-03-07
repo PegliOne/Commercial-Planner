@@ -1,0 +1,8 @@
+<h2>Order <%= @order.id %></h2>
+
+<% @product_orders.each_with_index do |product_order, index| %>
+  <p>
+      <%= product_order.quantity %>
+      <%= @products[index].name %>
+  </p>
+<% end %>
