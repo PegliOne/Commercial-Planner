@@ -11,6 +11,35 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "Home", root_path %> <!-- Visible to everyone -->
+        </li>
+        <li>
+          <%= link_to "Sign Up", new_user_path %> <!-- Visible when not logged in -->
+        </li>
+        <li>
+          <%= link_to "Log In", new_session_path %> <!-- Visible when not logged in -->
+        </li>
+        <li>
+          <%= link_to "View Your Orders", user_path(81) %> <!-- Only visible when logged in -->
+        </li>
+        <li>
+          <%= link_to "Place An Order", new_order_path %> <!-- Only visible when logged in -->
+        </li>
+        <li>
+          <%= link_to "View Products", products_path %> <!-- Visible to everyone -->
+        </li>
+        <li>
+          <%= link_to "View Orders", orders_path %> <!-- Visible to admins only -->
+        </li>
+        <li>
+          <a href="#">Log Out</a> <!-- Only visible when logged in -->
+        </li>
+      </ul>
+    </nav>
+    <h1>Economy Planner</h1>
     <%= yield %>
   </body>
 </html>

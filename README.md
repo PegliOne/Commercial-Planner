@@ -6,6 +6,10 @@
 
 Step One Complete: Rails project and GitHub repository created. Database set up and seeded. Orders and products appear on the website correctly. Routes, controllers and views set up for users, orders, products, departments and shifts. The next step is to add basic functionality for non-admin users (user login, order CRUD system, product search and/or selection forms).
 
+### 09/03/21 10:20pm
+
+Step Two Complete: Home page and meno created. User login, show and edit functionality created. Order CRUD system created. Enabling product selection proved to be challenging, but it was successfully enabled. A product search form is not yet necessary for such a small range of products, but could be added as bonus functionality. The next step is to add a shift CRUD system, add user permissions and style the website. 
+
 ## Production Plan
 
 ### Step One

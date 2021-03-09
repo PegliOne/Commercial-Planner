@@ -1,5 +1,10 @@
 <h2>Order <%= @order.id %></h2>
 
+<p><strong>Made On: </strong><%= @order.date %></p>
+<p><strong>Delivery Address: </strong><%= @order.address %></p>
+
+<p><%= link_to "Modify Order", edit_order_path %></p>
+
 <% @product_orders.each_with_index do |product_order, index| %>
   <p>
       <%= product_order.quantity %>

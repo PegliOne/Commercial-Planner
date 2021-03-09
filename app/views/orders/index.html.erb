@@ -1,6 +1,6 @@
 <h2>Order List</h2>
 <% @orders.map do |order| %>
   <p>
-    <a href="/orders/<%= order.id %>">Order <%= order.id %></a> 
+    <%= link_to "Order #{order.id}", order_path(order.id) %>
   </p>
 <% end %>

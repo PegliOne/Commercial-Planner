@@ -1,0 +1,14 @@
+<%= form_for @order do |f| %>
+
+    <h3>Order Details</h3>
+
+    <p>
+      <%= f.label "Enter A Delivery Address: " %>
+      <%= f.text_field :address, :required => true, :placeholder => "43 Arbat Street, Moscow" %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>    

@@ -2,6 +2,8 @@
 
 <% @products.map do |product| %>
   <p>
-      <%= product.name %>
+      <strong>ID: </strong><%= product.id %>
+      <strong>Name: </strong><%= product.name %>
+      <strong>Category: </strong><%= product.category %>
   </p>
 <% end %>
