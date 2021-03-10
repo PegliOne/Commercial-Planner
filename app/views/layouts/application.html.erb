@@ -3,6 +3,8 @@
   <head>
     <title>EconomyPlanner</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&family=Staatliches&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,35 +13,65 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li>
-          <%= link_to "Home", root_path %> <!-- Visible to everyone -->
-        </li>
-        <li>
-          <%= link_to "Sign Up", new_user_path %> <!-- Visible when not logged in -->
-        </li>
-        <li>
-          <%= link_to "Log In", new_session_path %> <!-- Visible when not logged in -->
-        </li>
-        <li>
-          <%= link_to "View Your Orders", user_path(81) %> <!-- Only visible when logged in -->
-        </li>
-        <li>
-          <%= link_to "Place An Order", new_order_path %> <!-- Only visible when logged in -->
-        </li>
-        <li>
-          <%= link_to "View Products", products_path %> <!-- Visible to everyone -->
-        </li>
-        <li>
-          <%= link_to "View Orders", orders_path %> <!-- Visible to admins only -->
-        </li>
-        <li>
-          <a href="#">Log Out</a> <!-- Only visible when logged in -->
-        </li>
-      </ul>
-    </nav>
-    <h1>Economy Planner</h1>
-    <%= yield %>
+    <header>
+      <h1>Economy Planner</h1>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "Home", root_path %>
+          </li>
+          <% if @current_user.nil? %>
+            <li>
+              <%= link_to "Log In", new_session_path %>
+            </li>
+            <li>
+              <%= link_to "Sign Up", new_user_path %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "View Your Details", user_path(@current_user.id) %>
+            </li>
+            <li>
+              <%= link_to "View Your Orders", user_orders_path(@current_user.id) %>
+            </li>
+            <li>
+              <%= link_to "View Your Shifts", user_shifts_path(@current_user.id) %>
+            </li>
+            <li>
+              <%= link_to "Place An Order", new_order_path %>
+            </li>
+            <li>
+              <%= link_to "View All Shifts", shifts_path %>
+            </li>
+            <li>
+              <%= link_to "Log Out", sessions_destroy_path %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "Search Products", products_path %>
+          </li>
+          <% if @current_user.present? && @current_user.admin? %>
+            <li>
+              <%= link_to "View All Orders", orders_path %> <!-- Visible to admins only -->
+            </li>
+            <li>
+              <%= link_to "Create New Shifts", new_shift_path %> <!-- Visible to admins only -->
+            </li>
+          <% end %>  
+          <li>
+            <%= link_to "Department Details", departments_path %>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>

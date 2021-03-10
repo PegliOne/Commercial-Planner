@@ -1,10 +1,12 @@
 <h2>Select Products</h2>
 
+<%= link_to "View Your Order", order_path(@order.id) %>
+
 <h3>Select Food Items</h3>
 
 <p>
     <% @foods.map do |product| %>
-      <%= form_tag update_product_order_path do |f| %>
+      <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -24,7 +26,7 @@
 
 <p>
     <% @drinks.map do |product, index| %>
-      <%= form_tag update_product_order_path do |f| %>
+      <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -44,7 +46,7 @@
 
 <p>
     <% @clothing.map do |product, index| %>
-      <%= form_tag update_product_order_path do |f| %>
+      <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -64,7 +66,7 @@
 
 <p>
     <% @hygiene_products.map do |product, index| %>
-      <%= form_tag update_product_order_path do |f| %>
+      <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -84,7 +86,7 @@
 
 <p>
     <% @tickets.map do |product, index| %>
-      <%= form_tag update_product_order_path do |f| %>
+      <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -104,7 +106,7 @@
 
 <p>
     <% @entertainment.map do |product, index| %>
-      <%= form_tag update_product_order_path do |f| %>
+      <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>

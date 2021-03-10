@@ -1,0 +1,11 @@
+<h2><%= @user.name %></h2>
+
+<h3>Orders</h3>
+
+<% @orders.map do |order| %>
+  <p>
+    <%= link_to "Order #{order.id}", order_path(order.id) %>
+    <strong>Made On:</strong> <%= order.date %>
+    <%= link_to "Cancel", order_path(order.id), :method => "delete" %>
+  </p>
+<% end %>

@@ -1,4 +1,6 @@
 class ProductOrdersController < ApplicationController
+before_action :check_for_login
+
   def new
     @product_order = ProductOrder.new
     product_categories
@@ -44,16 +46,3 @@ class ProductOrdersController < ApplicationController
     @entertainment = Product.where(category: "Entertainment")
   end
 end
-
-# Old Form Example
-#
-# <% @foods.each_with_index do |product, index| %>
-#   <% if @product_orders.present? && @product_orders.any? {|po| po.product_id == product.id } %>
-#     <% po = @product_orders.find_by(product_id: product.id) %>
-#     <%= label_tag product.name %>
-#     <%= number_field_tag "quantity#{index+1}", :value => 0, :min => 0, :max => 20 %>
-#   <% else %>
-#     <%= label_tag product.name %>
-#     <%= number_field_tag "quantity#{index+1}", :value => 0, :min => 0, :max => 20 %>
-#   <% end %>
-# <% end %>

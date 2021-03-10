@@ -1,12 +1,12 @@
 <h2>Select Products</h2>
 
-
+<%= link_to "View Your Order", order_path(@order.id) %>
 
 <h3>Select Food Items</h3>
 
 <p>
     <% @foods.each_with_index do |product, index| %>
-      <%= form_tag create_product_order_path do |f| %>
+      <%= form_tag create_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -20,7 +20,7 @@
 
 <p>
     <% @drinks.each_with_index do |product, index| %>
-      <%= form_tag create_product_order_path do |f| %>
+      <%= form_tag create_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -34,7 +34,7 @@
 
 <p>
     <% @clothing.each_with_index do |product, index| %>
-      <%= form_tag create_product_order_path do |f| %>
+      <%= form_tag create_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -48,7 +48,7 @@
 
 <p>
     <% @hygiene_products.each_with_index do |product, index| %>
-      <%= form_tag create_product_order_path do |f| %>
+      <%= form_tag create_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -62,7 +62,7 @@
 
 <p>
     <% @tickets.each_with_index do |product, index| %>
-      <%= form_tag create_product_order_path do |f| %>
+      <%= form_tag create_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
@@ -76,9 +76,8 @@
 
 <p>
     <% @entertainment.each_with_index do |product, index| %>
-      <%= form_tag create_product_order_path do |f| %>
+      <%= form_tag create_product_order_path do %>
         <%= product.name %>
-        <strong><%= label_tag "ID" %></strong>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
         <strong><%= label_tag :quantity %></strong>
         <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
@@ -86,5 +85,3 @@
       <% end %>
     <% end %>
 </p>
-
-<%= link_to "View Your Order", order_path(@order.id) %>

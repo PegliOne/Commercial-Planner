@@ -1,12 +1,13 @@
-<h2>Select A Shift</h2>
+<h2><%= @user.name %></h2>
 
-<% @shifts.map do |shift| %>
+<h3>Shifts</h3>
+
+<% @user.shifts.map do |shift| %>
   <p>
     <strong>Role: </strong><%= shift.role %>
     <strong>Start Time: </strong><%= shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
     <strong>Length: </strong><%= shift.hours %> hours
     <strong>Location: </strong><%= shift.location %>
-    <%= link_to "Select", user_shifts_add_path(81, shift.id), :method => "post" %>
-    <%= link_to "Modify", shift_path(shift.id) %><!-- Should only be visible to admins -->
+    <%= link_to "Cancel", user_shifts_remove_path(81, shift.id), :method => "post" %>
   </p>
 <% end %>

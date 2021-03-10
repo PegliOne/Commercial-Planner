@@ -1,16 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :check_for_login
+
   def index
     @orders = Order.all
   end
 
   def new
     @order = Order.new
-    # products = Product.all
-    # product_orders = []
-    # products.each_with_index do |product, index|
-    #   product_order = ProductOrder.new(product_id: product.id, quantity: 0)
-    #   product_orders.push(product_order)
-    # end
     product_categories
   end
 
@@ -67,6 +63,6 @@ class OrdersController < ApplicationController
       product = Product.find product_id
       @products.push(product)
     end
-    #@products.sort!
+    @products.sort!
   end
 end

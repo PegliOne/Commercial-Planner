@@ -1,2 +1,13 @@
-<h1>Departments#index</h1>
-<p>Find me in app/views/departments/index.html.erb</p>
+<h2>Department Details</h2>
+
+<div>
+  <% @departments.map do |department| %>
+    <div class="department">
+        <h3><%= department.name %></h3>
+
+        <p><strong>Head Quarters: </strong><%= department.head_quarters %></p>
+        <p><strong>Email: </strong><%= department.email %></p>
+        <p><strong>Contact Number: </strong><%= department.contact_number %></p>
+    </div>
+  <% end %>
+</div>

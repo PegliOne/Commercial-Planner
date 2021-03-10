@@ -1,47 +1,47 @@
 <h2><%= @user.name %></h2>
 
-<h3>Orders</h3>
+<div class="details">
+  <div>
+    <h3>Current Details</h3>
 
-<% @orders.map do |order| %>
-  <p>
-    <%= link_to "Order #{order.id}", order_path(order.id) %>
-    <strong>Made On:</strong> <%= order.date %>
-    <%= link_to "Cancel", order_path(order.id), :method => "delete" %>
-  </p>
-<% end %>
+    <p><strong>Email: </strong> <%= @user.email %></p>
+    <p><strong>Mobile: </strong> <%= @user.mobile %></p>
+    <p><strong>Available Hours: </strong> <%= @user.available_hours %></p>
 
-<h3>Details</h3>
+    <p><%= link_to "View Orders", user_orders_path(@user.id) %></p>
+    <p><%= link_to "View Shifts", user_shifts_path(@user.id) %></p>
+  </div>
 
-<p><strong>Email: </strong> <%= @user.email %></p>
-<p><strong>Mobile: </strong> <%= @user.mobile %></p>
-<p><strong>Available Hours: </strong> <%= @user.available_hours %></p>
+  <div> <!-- Hide this section if accessed by a different user -->
+      <h3>Edit Details</h3>
 
-<h3>Edit Details</h3>
+      <%= form_for @user do |f| %>
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name, :required => true %>
+        </p>
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name, :required => true %>
-  </p>
+        <p>
+          <%= f.label :email %>
+          <%= f.email_field :email, :required => true %>
+        </p>
 
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true %>
-  </p>
+        <p>
+          <%= f.label :mobile %>
+          <%= f.text_field :mobile, :required => true %>
+        </p>
 
-  <p>
-    <%= f.label :mobile %>
-    <%= f.text_field :mobile, :required => true %>
-  </p>
+        <p>
+          <%= f.label :available_hours %>
+          <%= f.number_field :available_hours, :required => true %>
+        </p>
 
-  <p>
-    <%= f.label :available_hours %>
-    <%= f.number_field :available_hours, :required => true %>
-  </p>
+        <!-- I might later add the option to change password by first submitting the original -->
 
-  <!-- I might later add the option to change password by first submitting the original -->
+        <p>
+          <%= f.submit "Edit Details" %>
+        </p>
 
-  <p>
-    <%= f.submit "Edit Details" %>
-  </p>
-<% end %>
+      <% end %>
+  </div>
+</div>

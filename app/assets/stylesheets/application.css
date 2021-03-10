@@ -13,3 +13,246 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   text-align: center;
+   font-size: 1.5rem;
+   background-color: #eecf6d;
+   font-family: 'Raleway', sans-serif;
+   margin: 100px auto;
+   box-sizing: border-box;
+ }
+
+ header {
+   width: 100%;
+   position: fixed;
+   top: 0;
+ }
+
+ h1 {
+   font-family: 'Staatliches', cursive;
+   background-color: #45050c;
+   color: #eecf6d;
+   letter-spacing: 8px;
+   text-align: center;
+   font-size: 2.5rem;
+   margin: 0;
+   padding: 10px 0;
+   width: 100%;
+   text-shadow: 2px 2px 2px black;
+ }
+
+ nav {
+   background-color: #45050c;
+   height: 7vh;
+ }
+
+ nav ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   display: flex;
+   justify-content: space-around;
+ }
+
+ nav ul li {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   font-size: 1.3rem;
+ }
+
+ nav ul li:hover, nav ul li:active {
+   background-color: darkred;
+ }
+
+ nav ul li a {
+   font-size: 1.1rem;
+   color: #eecf6d;
+   margin: 0;
+ }
+
+ main {
+   margin-top: 170px;
+   height: 75vh;
+ }
+
+ h2 {
+   font-size: 3rem;
+   font-weight: 800;
+   color: #45050c;
+   margin-top: 0;
+ }
+
+ h2 + a {
+   font-size: 1.5rem;
+   font-weight: 800;
+   color: #eecf6d;
+   background-color: #45050c;
+   padding: 10px;
+   border-radius: 15px;
+   border: none;
+ }
+
+ h3 {
+   font-size: 2rem;
+   color: #45050c;
+ }
+
+ main div.details {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+ }
+
+ main > div > div {
+   display: inline-block;
+   width: 45%;
+   margin-bottom: 40px;
+ }
+
+ main a {
+   color: darkred;
+ }
+
+ main a:hover {
+   color: red;
+ }
+
+ p {
+   margin: 50px auto;
+   width: 95%;
+ }
+
+ span {
+   display: inline-block;
+   margin: 15px;
+ }
+
+ a {
+   text-decoration: none;
+   font-weight: 800;
+   color: #45050c;
+   margin-left: 10px;
+   margin-right: 10px;
+ }
+
+ strong {
+   margin-left: 10px;
+ }
+
+ form {
+   margin: 20px auto;
+ }
+
+ label {
+   font-size: inherit;
+   font-weight: 800;
+   margin: 1%;
+ }
+
+ input, select {
+   font-size: 1.5rem;
+   text-align: center;
+   background: transparent;
+   padding: 2px;
+   border: 1px solid #eecf6d;
+   border-bottom: 2px solid #45050c;
+   outline: none;
+ }
+
+ input[type=number] {
+   width: 50px;
+ }
+
+ input[readonly=readonly] {
+   display: none;
+ }
+
+input[type=submit] {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #eecf6d;
+  background-color: #45050c;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+}
+
+input[type=submit]:hover {
+  background-color: darkred;
+}
+
+input:hover {
+   cursor: pointer;
+ }
+
+footer {
+   width: 100%;
+   position: fixed;
+   bottom: 0;
+ }
+
+ /* thead {
+   line-height: 3;
+ }
+
+ table {
+   width: 80%;
+   margin: 5% auto;
+   font-size: 1.4rem;
+ }
+
+ td, th {
+   width: 20%;
+   text-align: center;
+ }
+
+ img {
+   border: 1px solid grey;
+   max-width: 100%;
+   box-shadow: 2px 2px 2px black;
+ } */
+
+ /* button {
+   color: white;
+   background-color: darkred;
+   display: block;
+   width: 90%;
+   margin: 12% auto;
+   text-align: center;
+   letter-spacing: 3px;
+   font-size: 2rem;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+   text-shadow: 1px 1px 2px black;
+   box-shadow: 1px 1px 2px black;
+ }
+
+ button.edit {
+   color: white;
+   background-color: orangered;
+ }
+
+
+ button.submit {
+   background-color: darkred;
+   color: white;
+   margin: 6% auto;
+   width: 70%;
+   font-size: 2.5rem;
+ }
+
+ button:hover {
+   background-color: #aa0000;
+   cursor: pointer;
+ }
+
+ button.edit:hover {
+   background-color: #ff6600;
+ } */

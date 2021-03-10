@@ -1,2 +1,22 @@
-<h1>Shifts#show</h1>
-<p>Find me in app/views/shifts/show.html.erb</p>
+<h2> <%= @shift.role %> Shift: <%= @shift.location %></h2>
+
+<h3>Shift Details</h3>
+
+<p>
+   <strong>Start Time: </strong><%= @shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
+   <strong>Length: </strong><%= @shift.hours %> hours
+   <strong>Location: </strong><%= @shift.location %>
+</p>
+
+<p>
+  <strong>Assigned Workers</strong>:
+  <% @shift.users.map do |user| %>
+    <%= link_to user.name, user_path(user.id) %> (<%= link_to "remove", shift_users_remove_path(@shift.id, user.id), :method => "post" %>),
+  <% end %>
+</p>
+
+<h3>Edit Shift</h3>
+
+<%= render :partial => "form" %>
+
+<p>Don't forget to notify workers of shift cancelations.</p>

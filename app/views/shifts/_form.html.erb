@@ -1,0 +1,37 @@
+<%= form_for @shift do |f| %>
+
+    <p>
+      <%= f.label :role %>
+      <%= f.text_field :role, :required => true, :placeholder => "Harvesting Grains" %>
+    </p>
+
+    <p>
+      <%= f.label :location %>
+      <%= f.text_field :location, :required => true, :placeholder => "Western Siberia" %>
+    </p>
+
+    <p>
+      <%= f.label :start_time %>
+      <%= f.datetime_field :start_time, :required => true, :min => Time.now.change({sec: 0}), :max => "31-12-2100 00:00:00" %>
+    </p>
+
+    <p>
+      <%= f.label "Enter Duration: " %>
+      <%= f.number_field :hours, :required => true, :value => 8, :min => 3, :max => 10 %> hours
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
+
+<%= form_tag shift_users_add_path(@shift.id) do %>
+  <p>
+    <%= label_tag "Add A Worker: " %><!-- Improve to enable multiple workers to be added -->
+    <%= select "worker_id", nil, User.pluck(:name, :id), :required => true %>
+  </p>
+  <p>
+    <%= submit_tag "Add", :method => "post" %>
+  </p>
+<% end %>
