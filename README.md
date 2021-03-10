@@ -6,6 +6,10 @@
 
 ## Production Updates
 
+### 10/03/21 6:30pm
+
+Step Three Complete: Shift selection and shift CRUD systems complete. User and admin permissions added. Basic styling complete, though "selected" and "disabled" classes will need to be included for usability (see issues list). Project successfully deployed to Heroku. The next step is to include bonus functionality, such as calculating and displaying labour hours and checking if enough labour hours have been assigned.
+
 ### 08/03/21 10:30am
 
 Step One Complete: Rails project and GitHub repository created. Database set up and seeded. Orders and products appear on the website correctly. Routes, controllers and views set up for users, orders, products, departments and shifts. The next step is to add basic functionality for non-admin users (user login, order CRUD system, product search and/or selection forms).
