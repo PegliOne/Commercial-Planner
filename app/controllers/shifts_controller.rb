@@ -11,6 +11,11 @@ before_action :check_for_admin, except: [:index]
     @shift = Shift.new
   end
 
+  def create
+    @shift = Shift.create shift_params
+    redirect_to shift_path(@shift.id)
+  end
+
   def show
     @shift = Shift.find params[:id]
   end

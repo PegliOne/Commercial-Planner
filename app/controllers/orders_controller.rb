@@ -15,12 +15,12 @@ class OrdersController < ApplicationController
     order.date = Date.today
     @current_user = User.find_by(id: 81)
     @current_user.orders.push(order)
-    redirect_to new_product_order_path(order.id)
+    redirect_to edit_product_order_path(order.id)
   end
 
   def edit
+    @order = Order.find params[:id]
     product_categories
-    order_details
   end
 
   def update
@@ -31,13 +31,14 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order_details
+    @order = Order.find params[:id]
+    @product_orders = ProductOrder.where(order_id: params[:id])
   end
 
   def destroy
     order = Order.find params[:id]
     order.destroy
-    redirect_to orders_path
+    redirect_to user_orders_path
   end
 
   private
@@ -52,17 +53,5 @@ class OrdersController < ApplicationController
     @hygiene_products = Product.where(category: "Health/Hygiene")
     @tickets = Product.where(category: "Transport")
     @entertainment = Product.where(category: "Entertainment")
-  end
-
-  def order_details
-    @order = Order.find params[:id]
-    @product_orders = ProductOrder.where(order_id: params[:id])
-    @products = []
-    @product_orders.map do |product_order|
-      product_id = product_order.product_id
-      product = Product.find product_id
-      @products.push(product)
-    end
-    @products.sort!
   end
 end

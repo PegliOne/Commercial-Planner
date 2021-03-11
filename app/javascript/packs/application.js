@@ -8,3 +8,15 @@ import Turbolinks from "turbolinks"
 
 Rails.start()
 Turbolinks.start()
+
+console.log("javascript working")
+
+document.addEventListener("DOMContentLoaded", function() {
+  const submits = document.querySelectorAll('input[type=submit]');
+  submits.forEach(function(submit) {
+    submit.addEventListener("click", function() {
+      submit.classList.add("disabled");
+    })
+  })
+})
+// submits[0].style.color = "green"

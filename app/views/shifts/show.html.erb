@@ -19,4 +19,14 @@
 
 <%= render :partial => "form" %>
 
+<%= form_tag shift_users_add_path(@shift.id) do %>
+  <p>
+    <%= label_tag "Add A Worker: " %><!-- Improve to enable multiple workers to be added -->
+    <%= select "worker_id", nil, User.pluck(:name, :id), :required => true %>
+  </p>
+  <p>
+    <%= submit_tag "Add", :method => "post" %>
+  </p>
+<% end %>
+
 <p>Don't forget to notify workers of shift cancelations.</p>
