@@ -1,2 +1,9 @@
-<h1>Departments#show</h1>
-<p>Find me in app/views/departments/show.html.erb</p>
+<h2><%= @department.name %></h2>
+
+<p>Hours recommended to complete current orders: <%= @total_hours %></p>
+
+<p>Hours assigned: <%= @assigned_hours %></p>
+
+<p>This department has assigned <%= @status %> to complete its orders.</p>
+
+<p><%= @message %></p>

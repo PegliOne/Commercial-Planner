@@ -2,12 +2,12 @@
 
 <h3>Shifts</h3>
 
-<% @user.shifts.map do |shift| %>
+<% @shifts.map do |shift| %>
   <p>
     <strong>Role: </strong><%= shift.role %>
     <strong>Start Time: </strong><%= shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
     <strong>Length: </strong><%= shift.hours %> hours
     <strong>Location: </strong><%= shift.location %>
-    <%= link_to "Cancel", user_shifts_remove_path(81, shift.id), :method => "post" %>
+    <%= link_to "Cancel", user_shifts_remove_path(@current_user.id, shift.id), :method => "post" %>
   </p>
 <% end %>

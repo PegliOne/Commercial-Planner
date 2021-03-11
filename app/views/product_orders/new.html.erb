@@ -1,0 +1,89 @@
+<h2>Select Products</h2>
+
+<!-- Use partial if possible -->
+
+<p><%= link_to "View Your Order", order_path(@order.id) %></p>
+
+<h3>Select Food Items</h3>
+
+<p>
+    <% @foods.each_with_index do |product, index| %>
+      <%= form_tag create_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+</p>
+
+<h3>Select Drink Items</h3>
+
+<p>
+    <% @drinks.each_with_index do |product, index| %>
+      <%= form_tag create_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+</p>
+
+<h3>Select Clothing Items</h3>
+
+<p>
+    <% @clothing.each_with_index do |product, index| %>
+      <%= form_tag create_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+</p>
+
+<h3>Select Health and Hygiene Items</h3>
+
+<p>
+    <% @hygiene_products.each_with_index do |product, index| %>
+      <%= form_tag create_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+</p>
+
+<h3>Select Transport Tickets</h3>
+
+<p>
+    <% @tickets.each_with_index do |product, index| %>
+      <%= form_tag create_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+</p>
+
+<h3>Select Entertainment Products</h3>
+
+<p>
+    <% @entertainment.each_with_index do |product, index| %>
+      <%= form_tag create_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <%= number_field_tag :quantity, nil, :value => 0, :min => 0, :max => 20 %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+</p>

@@ -165,7 +165,8 @@
  }
 
  input[type=number] {
-   width: 50px;
+   width: 240px;
+   font-size: 1.8rem;
  }
 
  input[readonly=readonly] {
@@ -186,7 +187,11 @@ input[type=submit]:hover {
   background-color: darkred;
 }
 
-input[type=submit].disabled {
+form.disabled input[type=number] {
+  color: grey;
+}
+
+form.disabled input[type=submit] {
   background-color: #a04340;
   cursor: default;
 }

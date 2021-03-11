@@ -1,10 +1,22 @@
 # Economy-Planner-Plan
 
+# Ongoing Issues
+
+* Products in orders aren't sorted
+* Users can choose multiple shifts that happen at the same time
+* Admins can assign users to multiple shifts at the same time and more shifts than they've volunteered for
+* Users can make limitless orders
+* Users can change their orders constantly
+
 ## Websites Used
 * https://coolors.co/palettes/trending (for the colour scheme)
 * https://fonts.google.com/?preview.text_type=custom (for the fonts)
 
 ## Production Updates
+
+### 11/03/21 5:45pm
+
+Step Four in Progress: The ability to check required labour hours and check if enough labour hours have been assigned has been added. User sign up system added. The next step is to impose rules onto the website (such as preventing users from opting for multiple shifts at the same time) and thoroughly test the site.
 
 ### 10/03/21 6:30pm
 
@@ -44,7 +56,7 @@ Step Two Complete: Home page and meno created. User login, show and edit functio
 ### Step Four - Bonus Functionality
 * Calculate and display labour hours required for each department
 * Add the ability to check if enough labour hours have been assigned
-* Add user, product and department CRUD systems
+* Add user sign up and product and department CRUD systems
 * Add product images (stretch goal)
 * Push to GitHub / Heroku and update README
 

@@ -4,6 +4,7 @@ before_action :check_for_no_login, only: [:new]
 before_action :check_for_specific_user, except: [:new]
 
   def new
+    @user = User.new
   end
 
   def update
@@ -24,19 +25,21 @@ before_action :check_for_specific_user, except: [:new]
 
   def shifts
     @user = User.find params[:id]
+    @shifts = @user.shifts.sort_by {|shift| shift.start_time }
   end
 
   def select_shift
-    user = User.find params[:id]
-    shift = Shift.find params[:id]
+    user = User.find @current_user.id
+    shift = Shift.find params[:shift_id]
     user.shifts.push(shift) unless user.shifts.include?(shift) #TODO: Show when a shift has already been booked
     redirect_to user_shifts_path(user.id)
   end
 
   def remove_shift
     user = User.find params[:id]
-    shift = Shift.find params[:id]
+    shift = Shift.find params[:shift_id]
     user.shifts.delete(shift) if user.shifts.include?(shift) #TODO: Show a warning when a shift
+    redirect_to user_shifts_path(user.id)
   end
 
   private

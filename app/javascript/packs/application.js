@@ -12,10 +12,11 @@ Turbolinks.start()
 console.log("javascript working")
 
 document.addEventListener("DOMContentLoaded", function() {
-  const submits = document.querySelectorAll('input[type=submit]');
-  submits.forEach(function(submit) {
-    submit.addEventListener("click", function() {
-      submit.classList.add("disabled");
+  const forms = document.querySelectorAll('form');
+  forms.forEach(function(form) {
+    form.addEventListener("submit", function() {
+      form.classList.add("disabled");
+      form.children[3].setAttribute("readonly", true);
     })
   })
 })
