@@ -1,0 +1,27 @@
+<h2>List of Users</h2>
+
+<h3>Admin Users</h3>
+
+<% @users.map do |user| %>
+  <% if user.admin? %>
+    <p>
+      <strong>Name: </strong><%= user.name %>,
+      <strong>Email: </strong><%= user.email %>,
+      <strong>Available Hours: </strong><%= user.available_hours %>
+      <%= link_to "See Current Shifts", user_shifts_path(user.id) %>
+    </p>
+  <% end %>
+<% end %>
+
+<h3>Other Users</h3>
+
+<% @users.map do |user| %>
+  <% unless user.admin? %>
+    <p>
+      <strong>Name: </strong><%= user.name %>,
+      <strong>Email: </strong><%= user.email %>,
+      <strong>Available Hours: </strong><%= user.available_hours %>
+      <%= link_to "See Current Shifts", user_shifts_path(user.id) %>
+    </p>
+  <% end %>
+<% end %>

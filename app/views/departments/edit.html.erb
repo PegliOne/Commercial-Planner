@@ -1,2 +1,30 @@
-<h1>Departments#edit</h1>
-<p>Find me in app/views/departments/edit.html.erb</p>
+<h2><%= @department.name %></h2>
+
+<h3>Edit Details</h3>
+
+<%= form_for @department do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label "Location" %>
+    <%= f.text_field :head_quarters, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :contact_number %>
+    <%= f.text_field :contact_number, :required => true %>
+  </p>
+
+  <p>
+    <%= f.submit "Edit Details" %>
+  </p>
+
+<% end %>

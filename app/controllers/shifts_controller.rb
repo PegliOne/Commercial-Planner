@@ -28,7 +28,7 @@ before_action :check_for_admin, except: [:index]
   def add_user
     shift = Shift.find params[:shift_id]
     user = User.find params[:worker_id]
-    shift.users.push(user) unless shift.users.include?(user) # TODO: Add a warning to alert users
+    shift.users.push(user) unless shift.users.include?(user)
     redirect_to shift_path(shift.id)
   end
 

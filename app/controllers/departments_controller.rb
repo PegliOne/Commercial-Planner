@@ -6,6 +6,13 @@ before_action :check_for_admin, except: [:index]
   end
 
   def edit
+    @department = Department.find params[:id]
+  end
+
+  def update
+    @department.find = Department.find params[:id]
+    @department.update department_params
+    redirect_to departments_path
   end
 
   def show
@@ -38,5 +45,10 @@ before_action :check_for_admin, except: [:index]
       @status = "enough shifts"
       @message = "Congratulations! The department is on track."
     end
+  end
+
+  private
+  def department_params
+    params.require(:department).permit(:name, :head_quarters, :email, :contact_number)
   end
 end

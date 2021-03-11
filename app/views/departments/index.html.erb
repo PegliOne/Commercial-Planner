@@ -8,6 +8,7 @@
         <p><strong>Head Quarters: </strong><%= department.head_quarters %></p>
         <p><strong>Email: </strong><%= department.email %></p>
         <p><strong>Contact Number: </strong><%= department.contact_number %></p>
+        <p><%= link_to "Edit Details", edit_department_path(department.id) if @current_user.admin? %></p>
         <p><%= link_to "View Labour Stats", department_path(department.id) if @current_user.admin? %></p>
     </div>
   <% end %>

@@ -1,0 +1,29 @@
+<%= form_for @product do |f| %>
+
+    <p>Include units in the product name where necessary</p>
+
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name, :required => true, :placeholder => "Apples (by kilogram)" %>
+    </p>
+
+    <p>
+      <%= f.label :category %>
+      <%= f.select :category, raw("<option value='Food'>Food</option><option value='Drink'>Drink</option><option value='Clothing'>Clothing</option><option value='Health/Hygiene'>Health/Hygiene</option><option value='Transport'>Transport</option><option value='Entertainment'>Entertainment</option>"), :required => true %>
+    </p>
+
+    <p>
+      <%= f.label :labour_hours %>
+      <%= f.number_field :labour_hours, :required => true, :value => 1, :min => 0, :max => 50 %>
+    </p>
+
+    <p>
+      <%= f.label :department_id %>
+      <%= f.select :department_id, Department.pluck(:name, :id), :required => true %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>

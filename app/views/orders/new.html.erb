@@ -2,6 +2,8 @@
 
 <p>We strive to fulfil all orders for basic good within 1-2 weeks of the date they're submitted</p>
 
-<p>Orders can only be modified or cancelled within 2 days on when they're placed</p> <!--TODO: enforce this rule -->
-
-<%= render :partial => "form" %>
+<% if @current_user.orders.count < 2 %>
+  <%= render :partial => "form" %>
+<% else %>
+  <p>You cannot have more than 2 active orders at a time</p>
+<% end %>

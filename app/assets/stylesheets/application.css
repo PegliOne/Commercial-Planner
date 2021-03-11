@@ -157,6 +157,7 @@
  input, select {
    font-size: 1.5rem;
    text-align: center;
+   width: 300px;
    background: transparent;
    padding: 2px;
    border: 1px solid #eecf6d;

@@ -1,3 +1,7 @@
 <h2>Modify Order</h2>
 
-<%= render :partial => "form" %>
+<%= render :partial => "form" if Date.today <= @confirmation_date %>
+
+<p>
+  <%= "Orders can't be modified more than 2 days after they're placed." if Date.today >= @confirmation_date %>
+</p>

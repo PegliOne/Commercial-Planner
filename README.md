@@ -2,11 +2,7 @@
 
 # Ongoing Issues
 
-* Products in orders aren't sorted
-* Users can choose multiple shifts that happen at the same time
-* Admins can assign users to multiple shifts at the same time and more shifts than they've volunteered for
-* Users can make limitless orders
-* Users can change their orders constantly
+* Admins can assign users to multiple shifts at the same time and more hours than they opted for
 
 ## Websites Used
 * https://coolors.co/palettes/trending (for the colour scheme)
@@ -61,7 +57,7 @@ Step Two Complete: Home page and meno created. User login, show and edit functio
 * Push to GitHub / Heroku and update README
 
 ### Step Five
-* Improve styling
+* Improve styling and usability (e.g. add alerts)
 * Test if everything works and fix any problems
 * Review and simplify code
 * Push to GitHub / Heroku and update README
