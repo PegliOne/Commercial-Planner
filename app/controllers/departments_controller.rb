@@ -10,7 +10,7 @@ before_action :check_for_admin, except: [:index]
   end
 
   def update
-    @department.find = Department.find params[:id]
+    @department = Department.find params[:id]
     @department.update department_params
     redirect_to departments_path
   end

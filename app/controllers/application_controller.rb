@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   # This method was created to prevent logged in users accessing the records of other logged in users
   def check_for_specific_user
     unless @current_user.id == params[:id].to_i
-      #flash[:error] = "Account Steal"
+      flash[:error] = "Account Steal"
       redirect_to user_path(@current_user.id)
     end
   end

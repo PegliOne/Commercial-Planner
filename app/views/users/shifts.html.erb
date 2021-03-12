@@ -2,6 +2,11 @@
 
 <h3>Shifts</h3>
 
+<% if flash[:error].present? %>
+  <p><strong>Error: The shift you selected conflicted with one of your pre-selected shifts.</strong></p>
+  <p><strong>Remember that you are entitled to 10 hours breaks between shifts.</strong></p>
+<% end %>
+
 <% @shifts.map do |shift| %>
   <p>
     <strong>Role: </strong><%= shift.role %>
@@ -10,4 +15,8 @@
     <strong>Location: </strong><%= shift.location %>
     <%= link_to "Cancel", user_shifts_remove_path(@current_user.id, shift.id), :method => "post" %>
   </p>
+<% end %>
+
+<% if flash[:message].present? %>
+  <%= javascript_tag 'alert("Shift Cancelled")' %>
 <% end %>

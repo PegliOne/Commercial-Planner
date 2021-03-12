@@ -45,3 +45,7 @@
       <% end %>
   </div>
 </div>
+
+<% if flash[:error] == "Account Steal" %>
+  <%= javascript_tag 'alert("Stop Trying to Hack Accounts. Go back to yours.")' %>
+<% end %>

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 before_action :check_for_login, except: [:new]
-before_action :check_for_admin, only: [:index, :shifts]
+before_action :check_for_admin, only: [:index, :shifts, :orders]
 before_action :check_for_no_login, only: [:new]
-before_action :check_for_specific_user, except: [:new, :index, :shifts]
+before_action :check_for_specific_user, except: [:new, :index, :shifts, :orders]
 
   def index
     @users = User.all
@@ -24,7 +24,7 @@ before_action :check_for_specific_user, except: [:new, :index, :shifts]
   end
 
   def orders
-    @user = User.find params[:id]
+    @user = User.find @current_user.id
     @orders = Order.where(user_id: params[:id])
   end
 
@@ -47,15 +47,20 @@ before_action :check_for_specific_user, except: [:new, :index, :shifts]
         time_conflict = true if new_shift.start_time.between?(shift.start_time, shift_end_time)
       end
     end
-    #TODO: Show when a shift has already been booked or is at the same time as another
-    user.shifts.push(new_shift) unless user.shifts.include?(new_shift) || same_time_shift.present? || time_conflict == true
+    # Creates error when a shift presents a time conflict
+    if same_time_shift.present? || time_conflict == true
+      flash[:error] = "Time Conflict"
+    else
+      user.shifts.push(new_shift)
+    end
     redirect_to user_shifts_path(user.id)
   end
 
   def remove_shift
     user = User.find params[:id]
     shift = Shift.find params[:shift_id]
-    user.shifts.delete(shift) if user.shifts.include?(shift) #TODO: Show a warning when a shift
+    user.shifts.delete(shift) if user.shifts.include?(shift)
+    flash[:message] = "Shift Cancelled"
     redirect_to user_shifts_path(user.id)
   end
 

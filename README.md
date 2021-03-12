@@ -3,12 +3,18 @@
 # Ongoing Issues
 
 * Admins can assign users to multiple shifts at the same time and more hours than they opted for
+* Users are notified of cancellations, but do not have the opportunity to cancel them
+* Site is not responsive to smaller screens
 
 ## Websites Used
 * https://coolors.co/palettes/trending (for the colour scheme)
 * https://fonts.google.com/?preview.text_type=custom (for the fonts)
 
 ## Production Updates
+
+### 12/03/21 11:40
+
+Step Five Complete: Alerts added to notify users of errors and cancellations. Website functionality has been tested and shown to work. Unnecessary pages and code were deleted. Possible further improvements include improving the styling (making whole buttons clickable instead of just the links, making the site responsive to different screen sizes) and addressing the issues above.
 
 ### 11/03/21 5:45pm
 
