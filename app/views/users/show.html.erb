@@ -12,38 +12,40 @@
     <p><%= link_to "View Shifts", user_shifts_path(@user.id) %></p>
   </div>
 
-  <div> <!-- Hide this section if accessed by a different user -->
-      <h3>Edit Details</h3>
+  <% if @current_user.id == @user.id %>
+    <div>
+        <h3>Edit Details</h3>
 
-      <%= form_for @user do |f| %>
-        <p>
-          <%= f.label :name %>
-          <%= f.text_field :name, :required => true %>
-        </p>
+        <%= form_for @user do |f| %>
+          <p>
+            <%= f.label :name %>
+            <%= f.text_field :name, :required => true %>
+          </p>
 
-        <p>
-          <%= f.label :email %>
-          <%= f.email_field :email, :required => true %>
-        </p>
+          <p>
+            <%= f.label :email %>
+            <%= f.email_field :email, :required => true %>
+          </p>
 
-        <p>
-          <%= f.label :mobile %>
-          <%= f.text_field :mobile, :required => true %>
-        </p>
+          <p>
+            <%= f.label :mobile %>
+            <%= f.text_field :mobile, :required => true %>
+          </p>
 
-        <p>
-          <%= f.label :available_hours %>
-          <%= f.number_field :available_hours, :required => true %>
-        </p>
+          <p>
+            <%= f.label :available_hours %>
+            <%= f.number_field :available_hours, :required => true %>
+          </p>
 
-        <!-- I might later add the option to change password by first submitting the original -->
+          <!-- I might later add the option to change password by first submitting the original -->
 
-        <p>
-          <%= f.submit "Edit Details" %>
-        </p>
+          <p>
+            <%= f.submit "Edit Details" %>
+          </p>
 
-      <% end %>
-  </div>
+        <% end %>
+    </div>
+  <% end %>  
 </div>
 
 <% if flash[:error] == "Account Steal" %>
