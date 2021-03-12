@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action :check_for_login, except: [:new]
-before_action :check_for_admin, only: [:index, :shifts, :orders]
+before_action :check_for_admin, only: [:index, :shifts]
 before_action :check_for_no_login, only: [:new]
 before_action :check_for_specific_user, except: [:new, :index, :shifts, :orders]
 
