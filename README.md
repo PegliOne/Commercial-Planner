@@ -7,8 +7,10 @@
 * Site doesn't always give account steal warnings
 
 # Further Improvements
+
 * Give users the opportunity to cancel cancellation instead of just being alerted to them
 * Add a search feature in case the product list gets really long and use React for the product selection systems
+* Prevent users from cancelling shifts less than 24 hours beforehand
 
 ## Websites Used
 * https://coolors.co/palettes/trending (for the colour scheme)
