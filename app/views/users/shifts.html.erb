@@ -7,14 +7,16 @@
   <p><strong>Remember that you are entitled to 10 hours breaks between shifts.</strong></p>
 <% end %>
 
-<% @shifts.map do |shift| %>
-  <p>
-    <strong>Role: </strong><%= shift.role %>
-    <strong>Start Time: </strong><%= shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
-    <strong>Length: </strong><%= shift.hours %> hours
-    <strong>Location: </strong><%= shift.location %>
-    <%= link_to "Cancel", user_shifts_remove_path(@current_user.id, shift.id), :method => "post" %>
-  </p>
+<% if @current_user.id == @user.id || @current_user.admin? %>
+  <% @shifts.map do |shift| %>
+    <p>
+      <strong>Role: </strong><%= shift.role %>
+      <strong>Start Time: </strong><%= shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
+      <strong>Length: </strong><%= shift.hours %> hours
+      <strong>Location: </strong><%= shift.location %>
+      <%= link_to "Cancel", user_shifts_remove_path(@current_user.id, shift.id), :method => "post" if @current_user.id == @user.id %>
+    </p>
+  <% end %>
 <% end %>
 
 <% if flash[:message].present? %>

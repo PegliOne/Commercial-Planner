@@ -3,8 +3,12 @@
 # Ongoing Issues
 
 * Admins can assign users to multiple shifts at the same time and more hours than they opted for
-* Users are notified of cancellations, but do not have the opportunity to cancel them
 * Site is not responsive to smaller screens
+* Site doesn't always give account steal warnings
+
+# Further Improvements
+* Give users the opportunity to cancel cancellation instead of just being alerted to them
+* Add a search feature in case the product list gets really long and use React for the product selection systems
 
 ## Websites Used
 * https://coolors.co/palettes/trending (for the colour scheme)
