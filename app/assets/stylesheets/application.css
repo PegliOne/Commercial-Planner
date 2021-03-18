@@ -16,8 +16,8 @@
 
  body {
    text-align: center;
-   font-size: 1.5rem;
-   background-color: #eecf6d;
+   color: #1d3557;
+   background-color: #f1faee;
    font-family: 'Raleway', sans-serif;
    margin: 100px auto;
    /* box-sizing: border-box; */
@@ -30,12 +30,13 @@
  }
 
  h1 {
-   font-family: 'Staatliches', cursive;
-   background-color: #45050c;
-   color: #eecf6d;
-   letter-spacing: 8px;
+   font-family: 'Rubik', sans-serif;
+   background-color: #1d3557;
+   color: #f1faee;
+   letter-spacing: 5px;
    text-align: center;
-   font-size: 2.5rem;
+   font-size: 3.5rem;
+   font-weight: 400;
    margin: 0;
    padding: 10px 0;
    width: 100%;
@@ -43,7 +44,7 @@
  }
 
  nav {
-   background-color: #45050c;
+   background-color: #1d3557;
    height: 7vh;
  }
 
@@ -67,31 +68,31 @@
  }
 
  nav ul li:hover, nav ul li:active {
-   background-color: darkred;
+   background-color: #457b9d;
  }
 
  nav ul li a {
    font-size: 1.1rem;
-   color: #eecf6d;
+   color: #f1faee;
    margin: 0;
+   text-shadow: 1px 1px 1px black;
  }
 
  main {
-   margin-top: 170px;
+   margin-top: 200px;
  }
 
  h2 {
    font-size: 3rem;
    font-weight: 800;
-   color: #45050c;
+   color: #001233;
    margin-top: 0;
  }
 
  h2 + a {
    font-size: 1.5rem;
    font-weight: 800;
-   color: #eecf6d;
-   background-color: #45050c;
+   color: #001233;
    padding: 10px;
    border-radius: 15px;
    border: none;
@@ -99,7 +100,7 @@
 
  h3 {
    font-size: 2rem;
-   color: #45050c;
+   color: #001233;
  }
 
  main div.details {
@@ -114,17 +115,17 @@
    margin-bottom: 40px;
  }
 
- main a {
-   color: darkred;
- }
-
  main a:hover {
-   color: red;
+   color: #457b9d;
  }
 
  p {
    margin: 50px auto;
-   width: 97%;
+   width: 90%;
+ }
+
+ main p {
+   font-size: 1.3rem;
  }
 
  span {
@@ -135,13 +136,14 @@
  a {
    text-decoration: none;
    font-weight: 800;
-   color: #45050c;
+   color: #1d3557;
    margin-left: 10px;
    margin-right: 10px;
  }
 
  strong {
    margin-left: 10px;
+   color: #001233;
  }
 
  form {
@@ -149,6 +151,7 @@
  }
 
  label {
+   color: #001233;
    font-size: inherit;
    font-weight: 800;
    margin: 1%;
@@ -161,7 +164,7 @@
    background: transparent;
    padding: 2px;
    border: 1px solid #eecf6d;
-   border-bottom: 2px solid #45050c;
+   border-bottom: 2px solid #001233;
    outline: none;
  }
 
@@ -177,15 +180,15 @@
 input[type=submit] {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #eecf6d;
-  background-color: #45050c;
+  color: #f1faee;
+  background-color: #006466;
   padding: 10px;
   border-radius: 15px;
   border: none;
 }
 
 input[type=submit]:hover {
-  background-color: darkred;
+  background-color: #457b9d;
 }
 
 form.disabled input[type=number] {
@@ -193,7 +196,7 @@ form.disabled input[type=number] {
 }
 
 form.disabled input[type=submit] {
-  background-color: #a04340;
+  background-color: #99c1de;
   cursor: default;
 }
 
@@ -206,63 +209,3 @@ footer {
    position: fixed;
    bottom: 0;
  }
-
- /* thead {
-   line-height: 3;
- }
-
- table {
-   width: 80%;
-   margin: 5% auto;
-   font-size: 1.4rem;
- }
-
- td, th {
-   width: 20%;
-   text-align: center;
- }
-
- img {
-   border: 1px solid grey;
-   max-width: 100%;
-   box-shadow: 2px 2px 2px black;
- } */
-
- /* button {
-   color: white;
-   background-color: darkred;
-   display: block;
-   width: 90%;
-   margin: 12% auto;
-   text-align: center;
-   letter-spacing: 3px;
-   font-size: 2rem;
-   border: none;
-   outline: none;
-   border-radius: 10px;
-   text-shadow: 1px 1px 2px black;
-   box-shadow: 1px 1px 2px black;
- }
-
- button.edit {
-   color: white;
-   background-color: orangered;
- }
-
-
- button.submit {
-   background-color: darkred;
-   color: white;
-   margin: 6% auto;
-   width: 70%;
-   font-size: 2.5rem;
- }
-
- button:hover {
-   background-color: #aa0000;
-   cursor: pointer;
- }
-
- button.edit:hover {
-   background-color: #ff6600;
- } */

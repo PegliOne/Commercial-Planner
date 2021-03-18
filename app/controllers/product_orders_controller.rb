@@ -38,11 +38,11 @@ before_action :check_for_login
 
   private
   def product_categories
-    @foods = Product.where(category: "Food").sort
-    @drinks = Product.where(category: "Drink").sort
+    @dining = Product.where(category: "Dining").sort
+    @bath = Product.where(category: "Bath").sort
+    @electrical = Product.where(category: "Electrical").sort
     @clothing = Product.where(category: "Clothing").sort
-    @hygiene_products = Product.where(category: "Health/Hygiene").sort
-    @tickets = Product.where(category: "Transport").sort
-    @entertainment = Product.where(category: "Entertainment").sort
+    @health = Product.where(category: "Health/Hygiene").sort
+    @kids = Product.where(category: "Kids").sort
   end
 end

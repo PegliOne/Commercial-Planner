@@ -14,12 +14,14 @@
 
 <!-- sort items by category -->
 
-<% @product_orders.map do |product_order| %>
-  <span>
-      <%= product_order.product.name %> x <%= product_order.quantity %>
-  </span>
-<% end %>
+<p>
+  <% @product_orders.map do |product_order| %>
+    <span>
+        <%= product_order.product.name %> x <%= product_order.quantity %>
+    </span>
+  <% end %>
+</p>
 
 <p>
-  <a href="https://flight-planner-app.herokuapp.com/"><%= "Click here to book your flights" if @plane_ticket.present? %></a> 
+  <a href="https://flight-planner-app.herokuapp.com/"><%= "Click here to book your flights" if @plane_ticket.present? %></a>
 </p>

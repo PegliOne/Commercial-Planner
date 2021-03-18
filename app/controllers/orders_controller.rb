@@ -32,8 +32,6 @@ class OrdersController < ApplicationController
     @order = Order.find params[:id]
     @product_orders = ProductOrder.where(order_id: params[:id]).sort
     @confirmation_date = @order.date + 48 * 3600
-    plane_ticket_id = Product.find_by(:name => "Plane Tickets (by unit)").id
-    @plane_ticket = ProductOrder.find_by(product_id: plane_ticket_id, order_id: @order.id)
   end
 
   def destroy

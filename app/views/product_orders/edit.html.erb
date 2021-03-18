@@ -4,10 +4,10 @@
 
 <% if @order.date <= Date.today + 48 * 3600 %>
 
-  <h3>Select Food Items</h3>
+  <h3>Select Dining Items</h3>
 
   <p>
-      <% @foods.map do |product| %>
+      <% @dining.map do |product| %>
         <%= form_tag update_product_order_path do %>
           <%= product.name %>
           <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
@@ -24,10 +24,30 @@
       <% end %>
   </p>
 
-  <h3>Select Drink Items</h3>
+  <h3>Select Bath Items</h3>
 
   <p>
-    <% @drinks.map do |product| %>
+    <% @bath.map do |product| %>
+      <%= form_tag update_product_order_path do %>
+        <%= product.name %>
+        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
+        <strong><%= label_tag :quantity %></strong>
+        <% po = @product_orders.where(:order_id => @order.id, :product_id => product.id).first %>
+        <% if po.present? %>
+          <% quan = po.quantity %>
+        <% else %>
+          <% quan = 0 %>
+        <% end %>
+        <%= number_field_tag :quantity, nil, :value => quan, :min => 0, :max => 20, :required => true %>
+        <%= submit_tag %>
+      <% end %>
+    <% end %>
+  </p>
+
+  <h3>Select Electrical Products</h3>
+
+  <p>
+    <% @electrical.map do |product| %>
       <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
@@ -64,10 +84,10 @@
     <% end %>
   </p>
 
-  <h3>Select Health and Hygiene Items</h3>
+  <h3>Select Health Items</h3>
 
   <p>
-    <% @hygiene_products.map do |product| %>
+    <% @health.map do |product| %>
       <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
@@ -84,30 +104,10 @@
     <% end %>
   </p>
 
-  <h3>Select Transport Tickets</h3>
+  <h3>Select Kids' Items</h3>
 
   <p>
-    <% @tickets.map do |product| %>
-      <%= form_tag update_product_order_path do %>
-        <%= product.name %>
-        <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
-        <strong><%= label_tag :quantity %></strong>
-        <% po = @product_orders.where(:order_id => @order.id, :product_id => product.id).first %>
-        <% if po.present? %>
-          <% quan = po.quantity %>
-        <% else %>
-          <% quan = 0 %>
-        <% end %>
-        <%= number_field_tag :quantity, nil, :value => quan, :min => 0, :max => 20, :required => true %>
-        <%= submit_tag %>
-      <% end %>
-    <% end %>
-  </p>
-
-  <h3>Select Entertainment Products</h3>
-
-  <p>
-    <% @entertainment.map do |product| %>
+    <% @kids.map do |product| %>
       <%= form_tag update_product_order_path do %>
         <%= product.name %>
         <%= text_field_tag :product_id, nil, :value => product.id, :readonly => true %>
