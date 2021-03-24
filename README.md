@@ -7,12 +7,15 @@ Live Website: https://commercial-planner.herokuapp.com/
 * Admins can assign users to multiple shifts at the same time and more hours than they opted for
 * Site is not responsive to smaller screens
 * Site doesn't always give account steal warnings
+* Whole narbar buttons are not clickable
+* Input backgrounds should be removed
 
 # Further Improvements
 
 * Give users the opportunity to cancel cancellation instead of just being alerted to them
 * Add a search feature in case the product list gets really long and use React for the product selection systems
 * Prevent users from deleting shifts less than 24 hours beforehand
+* Use JavaScript to show which navbar link is selected
 
 ## Websites Used
 * https://coolors.co/palettes/trending (for the colour scheme)
