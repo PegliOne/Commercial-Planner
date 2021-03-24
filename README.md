@@ -4,6 +4,7 @@ Live Website: https://commercial-planner.herokuapp.com/
 
 # Ongoing Issues
 
+* Live version of the site needs to be re-seeded
 * Admins can assign users to multiple shifts at the same time and more hours than they opted for
 * Site is not responsive to smaller screens
 * Site doesn't always give account steal warnings
