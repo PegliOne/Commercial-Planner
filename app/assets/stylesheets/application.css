@@ -65,13 +65,20 @@
    height: 100%;
    margin: 0;
    font-size: 1.3rem;
+   transition: background-color 200ms;
  }
 
  nav ul li:hover, nav ul li:active {
    background-color: #457b9d;
+   cursor: pointer;
  }
 
  nav ul li a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
    font-size: 1.1rem;
    color: #f1faee;
    margin: 0;
@@ -115,7 +122,7 @@
    margin-bottom: 40px;
  }
 
- main a:hover {
+ main a:hover, form.button_to input[type=submit]:hover  {
    color: #457b9d;
  }
 
@@ -129,7 +136,24 @@
  }
 
  main div p {
-    font-size: 1.5rem;
+   font-size: 1.5rem;
+ }
+
+ main div.shift, main div.assigned-worker {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 18px 0;
+   font-size: 18px;
+ }
+
+ main div.shift form.button_to, main div.assigned-worker form.button_to {
+   margin: 0;
+ }
+
+ main div.shift form.button_to input[type=submit], main div.assigned-worker form.button_to input[type=submit] {
+   width: min-content;
+   padding: 0;
  }
 
  span {
@@ -137,10 +161,13 @@
    margin: 15px;
  }
 
- a {
+ a, form.button_to input[type=submit] {
+   background-color: transparent;
+   font-family: 'Raleway', sans-serif;
    text-decoration: none;
+   font-size: 18px;
    font-weight: 800;
-   color: #1d3557;
+   color: #006466;
    margin-left: 10px;
    margin-right: 10px;
  }
@@ -164,17 +191,16 @@
  input, select {
    font-size: 1.5rem;
    text-align: center;
-   width: 300px;
+   width: 350px;
    background: transparent;
    padding: 2px;
-   border: 1px solid #eecf6d;
+   border: none;
    border-bottom: 2px solid #001233;
    outline: none;
  }
 
  input[type=number] {
    width: 240px;
-   font-size: 1.8rem;
  }
 
  input[readonly=readonly] {
@@ -205,11 +231,11 @@ form.disabled input[type=submit] {
 }
 
 input:hover {
-   cursor: pointer;
- }
+  cursor: pointer;
+}
 
 footer {
-   width: 100%;
-   position: fixed;
-   bottom: 0;
- }
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

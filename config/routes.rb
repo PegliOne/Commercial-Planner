@@ -23,5 +23,4 @@ Rails.application.routes.draw do
 
   post '/shifts/add_user/:shift_id' => 'shifts#add_user', :as => 'shift_users_add'
   post '/shifts/remove_user/:shift_id/:user_id' => 'shifts#remove_user', :as => 'shift_users_remove'
-
 end

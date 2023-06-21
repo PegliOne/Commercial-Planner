@@ -9,13 +9,13 @@
 
 <% if @current_user.id == @user.id || @current_user.admin? %>
   <% @shifts.map do |shift| %>
-    <p>
+    <div class="shift">
       <strong>Role: </strong><%= shift.role %>
       <strong>Start Time: </strong><%= shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
       <strong>Length: </strong><%= shift.hours %> hours
       <strong>Location: </strong><%= shift.location %>
-      <%= link_to "Cancel", user_shifts_remove_path(@current_user.id, shift.id), :method => "post" if @current_user.id == @user.id %>
-    </p>
+      <%= button_to "Cancel", user_shifts_remove_path(@current_user.id, shift.id), :method => "post" if @current_user.id == @user.id %>
+    </div>
   <% end %>
 <% end %>
 

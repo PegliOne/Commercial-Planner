@@ -1,12 +1,12 @@
 <h2>Select A Shift</h2>
 
 <% @shifts.map do |shift| %>
-  <p>
+  <div class="shift">
     <strong>Role: </strong><%= shift.role %>
     <strong>Start Time: </strong><%= shift.start_time.strftime("%-d %B %Y, %-l:%M%P") %>
     <strong>Length: </strong><%= shift.hours %> hours
     <strong>Location: </strong><%= shift.location %>
-    <%= link_to "Select", user_shifts_add_path(@current_user.id, shift.id), :method => "post" %>
+    <%= button_to "Select", user_shifts_add_path(@current_user.id, shift.id), :method => "post" %>
     <%= link_to "Modify", shift_path(shift.id) if @current_user.admin? %>
-  </p>
+  </div>
 <% end %>
